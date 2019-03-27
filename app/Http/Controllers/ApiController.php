@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Requests\Requests;
 
 class ApiController extends Controller
 {
@@ -13,7 +14,7 @@ class ApiController extends Controller
         $username = $request->get('username');
         $password = $request->get('password');
 
-        $response = \Requests::post(
+        $response = Requests::post(
             'http://m.coke-food.com/cola-gift-exchange-manager/login',
             [
                 'Content-Type' => 'application/x-www-form-urlencoded',
